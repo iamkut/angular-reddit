@@ -13,11 +13,10 @@ import { Article } from './article.model'; // <-- added
 })
 export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row';
-  @Input() article: Article;
-
+  article: Article;
+  
   constructor() {
-    // article is populated by the Input now,
-    // so we don't need anything here
+    this.article = new Article('Angular', 'http://angular.io', 5);
   }
 
   voteUp(): boolean {
